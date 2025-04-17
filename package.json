@@ -1,21 +1,54 @@
 {
-      "name": "zendesk-mcp-server",
-      "version": "1.0.0",
-      "type": "module",
-      "description": "MCP Server for Zendesk API",
-      "main": "src/index.js",
-      "bin": {
-        "zendesk-mcp": "src/index.js"
-      },
-      "scripts": {
-        "start": "node src/index.js",
-        "dev": "node --watch src/index.js",
-        "inspect": "npx -y @modelcontextprotocol/inspector node src/index.js"
-      },
-      "dependencies": {
-        "@modelcontextprotocol/sdk": "^1.0.0",
-        "axios": "^1.6.2",
-        "dotenv": "^16.3.1",
-        "zod": "^3.22.4"
-      }
-    }
+  "name": "@simon/zendesk-mcp-server",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "MCP Server for Zendesk API",
+  "main": "dist/index.js",
+  "bin": {
+    "zendesk-mcp": "dist/index.js"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "start": "node dist/index.js",
+    "dev": "node --watch src/index.js",
+    "inspect": "npx -y @modelcontextprotocol/inspector node src/index.js",
+    "build": "bash ./build.sh",
+    "clean": "rm -rf dist",
+    "prepublishOnly": "npm run clean && npm run build",
+    "test": "echo \"No tests specified\" && exit 0",
+    "publish:artifactory": "npm publish --registry=https://simondata.jfrog.io/artifactory/api/npm/npm-local/",
+    "setup:artifactory": "bash ./artifactory-setup.sh"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.0.1",
+    "axios": "^1.6.2",
+    "dotenv": "^16.3.1",
+    "zod": "^3.22.4"
+  },
+  "devDependencies": {
+    "@modelcontextprotocol/inspector": "^1.0.0"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "publishConfig": {
+    "registry": "https://simondata.jfrog.io/artifactory/api/npm/npm-local/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Radico/zendesk-mcp-server.git"
+  },
+  "keywords": [
+    "zendesk",
+    "mcp",
+    "model-context-protocol",
+    "llm",
+    "ai"
+  ],
+  "author": "Simon",
+  "license": "MIT"
+}
