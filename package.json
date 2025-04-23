@@ -1,6 +1,6 @@
 {
   "name": "@simon/zendesk-mcp-server",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "type": "module",
   "description": "MCP Server for Zendesk API",
   "main": "dist/index.js",
@@ -20,7 +20,7 @@
     "clean": "rm -rf dist",
     "prepublishOnly": "npm run clean && npm run build",
     "test": "echo \"No tests specified\" && exit 0",
-    "publish:artifactory": "npm publish --registry=https://simondata.jfrog.io/artifactory/api/npm/npm-local/",
+    "publish:artifactory": "npm publish --registry=https://simondata.jfrog.io/artifactory/api/npm/npm/",
     "setup:artifactory": "bash ./artifactory-setup.sh"
   },
   "dependencies": {
@@ -36,11 +36,11 @@
     "node": ">=14.0.0"
   },
   "publishConfig": {
-    "registry": "https://simondata.jfrog.io/artifactory/api/npm/npm-local/"
+    "registry": "https://simondata.jfrog.io/artifactory/api/npm/npm/"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/Radico/zendesk-mcp-server.git"
+    "url": "git+https://github.com/Radico/zendesk-mcp-server.git"
   },
   "keywords": [
     "zendesk",
