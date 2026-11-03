@@ -13,7 +13,7 @@ A comprehensive Model Context Protocol (MCP) server for interacting with the Zen
 
 ### Prerequisites
 
-- Node.js 14 or higher
+- Node.js 18 or higher
 - A Zendesk account with API access
 
 ### Installation
